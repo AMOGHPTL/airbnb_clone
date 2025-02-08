@@ -29,7 +29,7 @@ export default async function Home() {
         <section className="pt-6 ml-20">
           <h2 className="text-4xl font-semibold pb-5">Explore nearby</h2>
           {/**pull some data from API endpoints */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 ">
           {exploreData.length > 0 ? (
             exploreData.map((item) => (
               <SmallCard img={item.img} loc={item.location} dist={item.distance}/>
