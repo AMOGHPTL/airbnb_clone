@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Banner from "./components/Banner";
 import SmallCard from "./components/SmallCard";
 import MediumCard from "./components/MediumCard";
+import LargeCard from "./components/LargeCard";
+import Footer from "./components/Footer";
 
 export default async function Home() {
   let exploreData = [];
@@ -35,7 +37,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
           {exploreData.length > 0 ? (
             exploreData.map((item) => (
-              <SmallCard img={item.img} loc={item.location} dist={item.distance}/>
+              <SmallCard key={item.img} img={item.img} loc={item.location} dist={item.distance}/>
             ))
           ) : (
             <p>No data available</p>
@@ -51,9 +53,14 @@ export default async function Home() {
               <MediumCard key={items.img} img={items.img} title={items.title}/>
             ))}
           </div>
-
         </section>
+
+        <LargeCard img="https://a0.muscache.com/im/pictures/2da67c1c-0c61-4629-8798-1d4de1ac9291.jpg" 
+         title="The Greatest Outdoors"
+          description="Whislists curated by airbnb"
+          buttonText="Get Inspired"/>
       </main>
+      <Footer/>
     </div>
   );
 }
