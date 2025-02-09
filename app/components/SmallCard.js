@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 function SmallCard({img , loc , dist}) {
   return (
-    <div className='flex space-x-4 my-5 items-center cursor-pointer hover:shadow-lg active:scale-90 transition duration-150'>
-      <div className='relative h-14 w-14'>
-        <Image Src="https://picsum.photos/200" layout='fill' objectFit='contain' className='rounded-lg bg-red' />
+    <div className='flex space-x-4 items-center cursor-pointer hover:bg-gray-100 hover:shadow-lg hover:scale-105 transition duration-200 ease-out p-1 m-3 rounded-xl'>
+      <div className='relative h-16 w-16'>
+        <Image Src={img} layout='fill' objectFit='contain' className='rounded-lg bg-red' />
       </div>
       <div>
-        <p className='text-sm'>{loc}</p>
-        <p className='text-xs'>{dist}</p>
+        <h2>{loc}</h2>
+        <h3 className='text-gray-500'>{dist}</h3>
       </div>
     </div>
   )
