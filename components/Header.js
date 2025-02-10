@@ -6,11 +6,13 @@ import {SearchIcon,GlobeAltIcon,MenuIcon,UserCircleIcon,UsersIcon,} from "@heroi
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker } from 'react-date-range';
+import { useRouter } from 'next/navigation';
 
 function Header() {
   const [searchInput,setSearchInput] = useState("");
   const [startDate,setStartDate] = useState(new Date());
   const [endDate,setEndDate] = useState(new Date());
+  const router = useRouter();
 
   const selectionRange = {
     startDate : startDate,
@@ -29,7 +31,7 @@ function Header() {
     <header
      className='relative stiky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-5 px-5 md:px-10 text-black'>
       {/**left */}
-      <div 
+      <div onClick={() => router.push("/")}
       className='relative flex items-center h-10 cursor-pointer'>
         <Image src="https://links.papareact.com/qd3" layout='fill' objectFit='contain' objectPosition='left'/>
       </div>
