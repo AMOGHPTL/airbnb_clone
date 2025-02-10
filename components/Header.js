@@ -27,18 +27,26 @@ function Header({placeholder}) {
   const [guestNumber,setGuestNumber] = useState(1);
 
   const search = () => {
-    const query = {
-      location: searchInput,
-      startDate: startDate.toISOString(),
-      endDate: endDate.toISOString(),
-      guestNumber,
-    }
-    const queryString = new URLSearchParams(query).toString();
-    router.push(`/search?${queryString}`);
+    router.push({
+      pathname: "/search",
+      query: {
+        location: searchInput,
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+        guestNumber,
+      }
+    })
+    resetAllFields();
+  }
+
+  const resetAllFields = () => {
     setSearchInput("");
     setGuestNumber(1);
-  
+    setStartDate(new Date());
+    setEndDate(new Date());
   }
+
+
   return (
     <header
      className='relative stiky top-0 z-50 grid grid-cols-3 bg-white shadow-md py-5 px-5 md:px-10 text-black'>
@@ -79,7 +87,7 @@ function Header({placeholder}) {
           </div>
         </div>
         <div className='flex pt-2'>
-          <button onClick={(e)=>{setSearchInput("");setGuestNumber(1)}} className='flex-grow text-gray-500'>cancel</button>
+          <button onClick={resetAllFields} className='flex-grow text-gray-500'>cancel</button>
           <button onClick={search} className='flex-grow text-red-400'>search</button>
         </div>
         </div>
