@@ -37,9 +37,8 @@ function MapComponent({ searchResults }) {
       onMove={(evt) => setViewState(evt.viewState)}
     >
       {searchResults.map((result) => (
-        <div>
+        <div key={result.long}>
         <Marker 
-          key={result.long}
           longitude={result.long} 
           latitude={result.lat} 
           anchor='top'
