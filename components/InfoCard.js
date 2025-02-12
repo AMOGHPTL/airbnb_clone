@@ -1,9 +1,10 @@
 import { HeartIcon } from '@heroicons/react/outline';
 import { StarIcon } from '@heroicons/react/solid';
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 
-function InfoCard({img,location,title,description,star,price,total,lon,lat}) {
+function InfoCard({img,location,title,description,star,price,total}) {
+  const [liked,setLiked] = useState(false)
   return (
     <div className='flex pt-5 pb-5 md:p-7 md:m-5 border-b rounded-lg cursor-pointer hover:opacity-80 hover:scale-105 
     hover:shadow-lg active:scale-100 transition transform duration-150 ease-out first:border-t'>
@@ -13,7 +14,7 @@ function InfoCard({img,location,title,description,star,price,total,lon,lat}) {
       <div className='flex-grow flex flex-col pl-5'>
        <div className=' flex justify-between'>
         <p className='text-xs'>{location}</p>
-        <HeartIcon className='h-4 md:h-7 cursor-pointer hover:fill-red-400 hover:text-red-400'/>
+        <HeartIcon className={liked?"h-4 md:h-7 cursor-pointer fill-red-400 text-red-400 ":'h-4 md:h-7 cursor-pointer'} onClick={()=>setLiked(!liked)}/>
        </div>
        <div className='space-y-3 md:space-y-5'>
         <h2 className='text-sm md:text-lg font-semibold'>{title}</h2>
