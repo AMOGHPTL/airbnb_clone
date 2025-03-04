@@ -5,6 +5,7 @@ import SmallCard from "../components/SmallCard";
 import MediumCard from "../components/MediumCard";
 import LargeCard from "../components/LargeCard";
 import Footer from "../components/Footer";
+<meta name="google-site-verification" content="c9HzA7mKIjbSD0IF90rnyqMz5rke0bbxNi6b9j21Cuk" />
 
 export default function Home({exploreData,cardsData}) {
   return (
