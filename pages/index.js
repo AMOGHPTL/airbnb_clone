@@ -10,9 +10,7 @@ import Footer from "../components/Footer";
 export default function Home({exploreData,cardsData}) {
   return (
     <div className="bg-white text-black">
-      <head>
-       <meta name="google-site-verification" content="c9HzA7mKIjbSD0IF90rnyqMz5rke0bbxNi6b9j21Cuk" />
-      </head>
+      
       {/**header */}
       <Header />
       {/**banner */}
